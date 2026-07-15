@@ -108,7 +108,7 @@ The initial reconnaissance phase established the target's externally exposed att
 
 ![Figure 01](evidence/screenshots/01_initial_nmap_part1.png)
 
-*Figure 01. Initial TCP service enumeration using Nmap (Part 1).*
+*Initial TCP service enumeration using Nmap (Part 1).*
 
 ---
 
@@ -116,7 +116,7 @@ The initial reconnaissance phase established the target's externally exposed att
 
 ![Figure 02](evidence/screenshots/02_initial_nmap_part2.png)
 
-*Figure 02. Initial TCP service enumeration using Nmap (Part 2).*
+*Initial TCP service enumeration using Nmap (Part 2).*
 
 ---
 
@@ -152,7 +152,7 @@ The identified application functionality significantly expanded the potential at
 
 ![Figure 03](evidence/screenshots/03_discovered_api_endpoints.png)
 
-*Figure 03. Enumeration of publicly accessible application endpoints.*
+*Enumeration of publicly accessible application endpoints.*
 
 ---
 
@@ -160,7 +160,7 @@ The identified application functionality significantly expanded the potential at
 
 ![Figure 04](evidence/screenshots/04_bug_report_rendering_logic.png)
 
-*Figure 04. Analysis of the bug reporting functionality during application reconnaissance.*
+*Analysis of the bug reporting functionality during application reconnaissance.*
 
 ---
 
@@ -196,7 +196,7 @@ Successful exploitation allowed attacker-controlled JavaScript to execute within
 
 ![Figure 05](evidence/screenshots/05_stored_xss_request.png)
 
-*Figure 05. Stored Cross-Site Scripting payload submitted through the bug reporting functionality.*
+*Stored Cross-Site Scripting payload submitted through the bug reporting functionality.*
 
 ---
 
@@ -204,7 +204,7 @@ Successful exploitation allowed attacker-controlled JavaScript to execute within
 
 ![Figure 06](evidence/screenshots/06_stored_xss_callback.png)
 
-*Figure 06. Successful execution of the Stored XSS payload within the administrator's authenticated browser session.*
+*Successful execution of the Stored XSS payload within the administrator's authenticated browser session.*
 
 ### 4. Administrator Session Hijacking
 
@@ -234,7 +234,7 @@ Compromise of the administrator's authenticated session resulted in unauthorized
 
 ![Figure 07](evidence/screenshots/07_admin_cookie_exfiltration.png)
 
-*Figure 07. Administrator session cookie successfully exfiltrated via the Stored XSS payload.*
+*Administrator session cookie successfully exfiltrated via the Stored XSS payload.*
 
 ---
 
@@ -242,7 +242,7 @@ Compromise of the administrator's authenticated session resulted in unauthorized
 
 ![Figure 08](evidence/screenshots/08_admin_session_validation.png)
 
-*Figure 08. Validation of the compromised administrator session.*
+*Validation of the compromised administrator session.*
 
 ---
 
@@ -250,7 +250,7 @@ Compromise of the administrator's authenticated session resulted in unauthorized
 
 ![Figure 09](evidence/screenshots/09_admin_users_endpoint.png)
 
-*Figure 09. Administrative functionality accessible after successful session hijacking.*
+*Administrative functionality accessible after successful session hijacking.*
 
 ### 5. Authenticated API Enumeration
 
@@ -308,7 +308,7 @@ The directory traversal vulnerability exposed sensitive application resources th
 
 ![Figure 10](evidence/screenshots/10_directory_traversal_etc_passwd.png)
 
-*Figure 10. Successful directory traversal allowing arbitrary file disclosure.*
+*Successful directory traversal allowing arbitrary file disclosure.*
 
 ---
 
@@ -316,7 +316,7 @@ The directory traversal vulnerability exposed sensitive application resources th
 
 ![Figure 11](evidence/screenshots/11_app_py_source.png)
 
-*Figure 11. Disclosure of the application's main source code.*
+*Disclosure of the application's main source code.*
 
 ---
 
@@ -324,7 +324,7 @@ The directory traversal vulnerability exposed sensitive application resources th
 
 ![Figure 12](evidence/screenshots/12_config_py_source.png)
 
-*Figure 12. Disclosure of application configuration settings.*
+*Disclosure of application configuration settings.*
 
 ---
 
@@ -332,7 +332,7 @@ The directory traversal vulnerability exposed sensitive application resources th
 
 ![Figure 13](evidence/screenshots/13_db_json_disclosure.png)
 
-*Figure 13. Disclosure of the application's JSON data store.*
+*Disclosure of the application's JSON data store.*
 
 ---
 
@@ -374,7 +374,7 @@ Access to the application's source code enabled precise identification of insecu
 
 ![Figure 14](evidence/screenshots/14_command_injection_crop_shell_true.png)
 
-*Figure 14. Source code responsible for the vulnerable image transformation workflow.*
+*Source code responsible for the vulnerable image transformation workflow.*
 
 ---
 
@@ -434,7 +434,7 @@ Successful command injection resulted in arbitrary operating system command exec
 
 ![Figure 16](evidence/screenshots/16_command_injection_sleep10_delay.png)
 
-*Figure 16. Time-based payload confirming arbitrary operating system command execution.*
+*Time-based payload confirming arbitrary operating system command execution.*
 
 ---
 
@@ -472,7 +472,7 @@ Initial access to the target system enabled comprehensive post-exploitation enum
 
 ![Figure 17](evidence/screenshots/17_initial_access_web_shell.png)
 
-*Figure 17. Initial reverse shell established as the **web** service account.*
+*Initial reverse shell established as the **web** service account.*
 
 ### 10. Backup Archive Discovery
 
@@ -502,7 +502,7 @@ The recovered backup archive represented a valuable source of historical applica
 
 ![Figure 18](evidence/screenshots/18_backup_archive_discovery.png)
 
-*Figure 18. Discovery of the encrypted application backup archive during post-exploitation.*
+*Discovery of the encrypted application backup archive during post-exploitation.*
 
 ### 11. Backup Decryption
 
@@ -534,7 +534,7 @@ Successful decryption exposed historical application data that was intended to r
 
 ![Figure 19](evidence/screenshots/19_aes_backup_password_cracked.png)
 
-*Figure 19. Successful recovery of the password required to decrypt the encrypted backup archive.*
+*Successful recovery of the password required to decrypt the encrypted backup archive.*
 
 ### 12. Credential Recovery
 
@@ -572,7 +572,7 @@ Weak password storage allowed valid operating system credentials to be recovered
 
 ![Figure 20](evidence/screenshots/20_mark_password_cracked.png)
 
-*Figure 20. Successful offline recovery of the local user's password.*
+*Successful offline recovery of the local user's password.*
 
 ---
 
@@ -619,7 +619,7 @@ Lateral movement provided access to a more privileged local user account and rev
 
 ![Figure 21](evidence/screenshots/21_mark_shell.png)
 
-*Figure 21. Successful authentication as the local user **mark**.*
+*Successful authentication as the local user **mark**.*
 
 ---
 
@@ -627,7 +627,7 @@ Lateral movement provided access to a more privileged local user account and rev
 
 ![Figure 22](evidence/screenshots/22_sudo_privileges.png)
 
-*Figure 22. Enumeration of the user's sudo privileges revealing unrestricted access to the Charcol utility.*
+*Enumeration of the user's sudo privileges revealing unrestricted access to the Charcol utility.*
 
 ### 14. Privilege Escalation (Charcol)
 
@@ -666,7 +666,7 @@ Abuse of the privileged Charcol utility resulted in unrestricted root-level comm
 
 ![Figure 23](evidence/screenshots/23_charcol_initial_setup.png)
 
-*Figure 23. Initial configuration of the privileged Charcol utility.*
+*Initial configuration of the privileged Charcol utility.*
 
 ---
 
@@ -674,7 +674,7 @@ Abuse of the privileged Charcol utility resulted in unrestricted root-level comm
 
 ![Figure 24](evidence/screenshots/24_charcol_interactive_shell.png)
 
-*Figure 24. Interactive access to the Charcol management interface.*
+*Interactive access to the Charcol management interface.*
 
 ---
 
@@ -682,7 +682,7 @@ Abuse of the privileged Charcol utility resulted in unrestricted root-level comm
 
 ![Figure 25](evidence/screenshots/25_suid_root_bash_created.png)
 
-*Figure 25. Creation of a privileged SUID binary through the Charcol utility.*
+*Creation of a privileged SUID binary through the Charcol utility.*
 
 ---
 
@@ -690,7 +690,7 @@ Abuse of the privileged Charcol utility resulted in unrestricted root-level comm
 
 ![Figure 26](evidence/screenshots/26_root_reverse_shell.png)
 
-*Figure 26. Successful reverse shell received with root privileges.*
+*Successful reverse shell received with root privileges.*
 
 ### 15. Root Access
 
@@ -727,7 +727,7 @@ Successful privilege escalation demonstrated complete compromise of the target e
 
 ![Figure 27](evidence/screenshots/27_root_flag.png)
 
-*Figure 27. Successful completion of the assessment with full administrative access to the target system.*
+*Successful completion of the assessment with full administrative access to the target system.*
 
 ## Vulnerability Summary
 
