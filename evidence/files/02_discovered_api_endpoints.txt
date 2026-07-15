@@ -1,0 +1,19 @@
+fetch(`${window.location.origin}/auth_status?_t=${new Date().getTime()}`
+fetch(`${window.location.origin}/register`
+fetch(`${window.location.origin}/login`
+fetch(`${window.location.origin}/logout`
+fetch(`${window.location.origin}/images`
+fetch(`${window.location.origin}/delete_image`
+fetch(`${window.location.origin}/edit_image_details`
+fetch(`${window.location.origin}/convert_image`
+fetch(`${window.location.origin}/apply_visual_transform`
+fetch(`${window.location.origin}/delete_image_metadata`
+fetch(`${window.location.origin}${endpoint}`
+fetch(`${window.location.origin}/report_bug`
+fetch(`${window.location.origin}/admin/bug_reports`
+fetch(`${window.location.origin}/admin/delete_bug_report`
+fetch(`${window.location.origin}/admin/delete_user`
+fetch(`${window.location.origin}/admin/users`
+fetch(`${window.location.origin}/get_image_collections`
+fetch(`${window.location.origin}/create_image_collection`
+fetch(`${window.location.origin}/move_images_to_collection`
