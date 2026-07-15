@@ -120,7 +120,7 @@ The initial reconnaissance phase established the target's externally exposed att
 
 ---
 
-**Supporting File**
+**Supporting Artifact**
 
 - [`01_initial_nmap.txt`](evidence/files/01_initial_nmap.txt)
 
@@ -164,7 +164,7 @@ The identified application functionality significantly expanded the potential at
 
 ---
 
-**Supporting File**
+**Supporting Artifact**
 
 - [`02_discovered_api_endpoints.txt`](evidence/files/02_discovered_api_endpoints.txt)
 
@@ -530,11 +530,11 @@ Successful decryption exposed historical application data that was intended to r
 
 #### Evidence
 
-**Figure 19 – Backup Successfully Decrypted**
+**Figure 19 – AES Backup Password Cracked**
 
-![Figure 19](evidence/screenshots/19_backup_decrypted.png)
+![Figure 19](evidence/screenshots/19_aes_backup_password_cracked.png)
 
-*Figure 19. Successful decryption of the encrypted application backup archive.*
+*Figure 19. Successful recovery of the password required to decrypt the encrypted backup archive.*
 
 ### 12. Credential Recovery
 
@@ -568,19 +568,11 @@ Weak password storage allowed valid operating system credentials to be recovered
 
 #### Evidence
 
-**Figure 20 – Password Hash Recovery**
+**Figure 20 – Mark Password Cracked**
 
-![Figure 20](evidence/screenshots/20_password_hashes.png)
+![Figure 20](evidence/screenshots/20_mark_password_cracked.png)
 
-*Figure 20. User password hashes recovered from the extracted application database.*
-
----
-
-**Figure 21 – Password Successfully Cracked**
-
-![Figure 21](evidence/screenshots/21_mark_password_cracked.png)
-
-*Figure 21. Offline recovery of the **mark** user's password.*
+*Figure 20. Successful offline recovery of the local user's password.*
 
 ---
 
@@ -623,19 +615,19 @@ Lateral movement provided access to a more privileged local user account and rev
 
 #### Evidence
 
-**Figure 22 – Local User Access**
+**Figure 21 – Mark Shell**
 
-![Figure 22](evidence/screenshots/22_mark_shell.png)
+![Figure 21](evidence/screenshots/21_mark_shell.png)
 
-*Figure 22. Successful authentication as the local user **mark**.*
+*Figure 21. Successful authentication as the local user **mark**.*
 
 ---
 
-**Figure 23 – Sudo Privileges**
+**Figure 22 – Sudo Privileges**
 
-![Figure 23](evidence/screenshots/23_mark_sudo_l.png)
+![Figure 22](evidence/screenshots/22_sudo_privileges.png)
 
-*Figure 23. Enumeration of the user's sudo privileges revealing access to the privileged Charcol utility.*
+*Figure 22. Enumeration of the user's sudo privileges revealing unrestricted access to the Charcol utility.*
 
 ### 14. Privilege Escalation (Charcol)
 
@@ -670,27 +662,35 @@ Abuse of the privileged Charcol utility resulted in unrestricted root-level comm
 
 #### Evidence
 
-**Figure 24 – Charcol Initialisation**
+**Figure 23 – Charcol Initial Setup**
 
-![Figure 24](evidence/screenshots/24_charcol_initialisation.png)
+![Figure 23](evidence/screenshots/23_charcol_initial_setup.png)
 
-*Figure 24. Initial execution of the privileged Charcol utility.*
-
----
-
-**Figure 25 – Charcol Interactive Shell**
-
-![Figure 25](evidence/screenshots/25_charcol_shell.png)
-
-*Figure 25. Interactive access to the Charcol management interface.*
+*Figure 23. Initial configuration of the privileged Charcol utility.*
 
 ---
 
-**Figure 26 – Root Shell**
+**Figure 24 – Charcol Interactive Shell**
 
-![Figure 26](evidence/screenshots/26_root_shell.png)
+![Figure 24](evidence/screenshots/24_charcol_interactive_shell.png)
 
-*Figure 26. Successful execution of commands with root privileges.*
+*Figure 24. Interactive access to the Charcol management interface.*
+
+---
+
+**Figure 25 – SUID Root Bash Created**
+
+![Figure 25](evidence/screenshots/25_suid_root_bash_created.png)
+
+*Figure 25. Creation of a privileged SUID binary through the Charcol utility.*
+
+---
+
+**Figure 26 – Root Reverse Shell**
+
+![Figure 26](evidence/screenshots/26_root_reverse_shell.png)
+
+*Figure 26. Successful reverse shell received with root privileges.*
 
 ### 15. Root Access
 
@@ -798,6 +798,14 @@ The attack progressed from initial reconnaissance and web application assessment
 Although each vulnerability individually represented a significant security issue, their combination resulted in a complete compromise of the application and underlying operating system.
 
 This assessment highlights the importance of defence-in-depth, secure software development practices, proper credential protection, and continuous security testing throughout the software lifecycle.
+
+## Lessons Learned
+
+This assessment demonstrates how multiple independently exploitable vulnerabilities can be chained together to achieve complete system compromise.
+
+While several of the identified issues individually presented a significant security risk, the lack of defence-in-depth allowed each successful step to facilitate the next stage of the attack.
+
+The assessment also highlights the importance of secure coding practices, proper credential protection, least-privilege principles, and continuous security testing throughout the software development lifecycle.
 
 ## Evidence
 
